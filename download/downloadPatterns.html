@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="../lib/canvas-toBlob.js"></script>
+  <script src="../lib/FileSaver.min.js"></script>
+  <script src="../lib/d3.min.js"></script>
+</head>
+<style>
+.content {
+  height: 100%;
+  font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
+}
+
+.tableContent {
+  position: relative;
+  top: 10%;
+  margin: 0 auto;
+  width: 80%;
+  height: 80%;
+}
+
+.table {
+  height: 100%;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  border-bottom: 2px solid #c1c1c1;
+  border-top: 2px solid #c1c1c1;
+  border-left : 2px solid #c1c1c1;
+  border-right: 2px solid #c1c1c1;
+  table-layout: fixed;
+}
+
+th {
+  border-bottom: 2px solid #c1c1c1;
+  border-top: 1px solid #c1c1c1;
+  border-left : 1px solid #efefef;
+  border-right: 1px solid #efefef;
+  padding: 10px 5px 10px 5px;
+  text-align: center;
+  font-size: 1.1em;
+  margin: -10px -10px -10px -10px;
+}
+
+td {
+  #border-bottom: 1px solid #c1c1c1;
+  #border-top: 1px solid #c1c1c1;
+  #border-left : 1px solid #efefef;
+  #border-right: 1px solid #efefef;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  
+  max-width: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+td:hover {
+  cursor: pointer;
+}
+
+.source, .target, .eoi, .source1 {  
+  padding: 12px 24px 12px 24px;
+  
+  border-bottom: 1px solid #c1c1c1;
+  #border-top: 1px solid #666;
+  #border-left : 1px solid #666;
+  border-right: 1px solid #c1c1c1;
+  
+  background: url("../icons/chevron.png") no-repeat;
+  background-size: 15% 100%;
+  background-position: right top;
+  
+  
+  #background-color: #f2f2f2;
+}
+
+.target1 {  
+  padding: 12px 24px 12px 24px;
+  
+  border-bottom: 1px solid #c1c1c1;
+  #border-top: 1px solid #666;
+  #border-left : 1px solid #666;
+  #border-right: 1px solid #666;
+
+  background: url("../icons/chevron.png") no-repeat;
+  background-size: 15% 100%;
+  background-position: right top;
+}
+
+.innerTable {
+  width: 100%;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  border-collapse: collapse;
+}
+
+.innerRow:nth-child(even) {
+  #background-color: #f2f2f2;
+}
+
+.box .tooltiptxt {
+  font-size: 0.85em;
+  visibility: hidden;
+  width: 190px;
+  background-color: white;
+  color: black;
+  text-align: left;
+  border: 1px solid black;
+  #padding: 5px 5px 5px 5px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  
+  
+}
+
+#margin {
+  height: 100px;
+}
+</style>
+<body>
+
+  <div id="content" class="content">
+    <div id="divTable" class="tableContent">
+    <table id="jobsTable" class="table">
+      <tr>
+	    <th id="header0" class="index">Predecessor -1</th>
+	    <th id="header1" class="index">Predecessor</th>
+	    <th id="header2" class="index">Event of Interest</th>
+	    <th id="header3" class="index">Successor</th>
+		<th id="header4" class="index">Successor +1</th>
+      </tr>
+    </table>
+    </div>
+	
+  </div>
+
+  <script src="../report/graph.js"></script>
+  <script src="../report/patterns.js"></script>
+  <script src="downloadPatterns.js"></script>
+</body>
+</html>

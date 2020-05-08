@@ -1,0 +1,39 @@
+{
+  "manifest_version": 2,
+  "name": "CA detection",
+  "version": "1.0",
+
+  "description": "Detects CA in users from HCI interactions.",
+
+  "icons": {
+    "48": "icons/logger-48.png"
+  },
+
+  "background": {
+    "scripts": ["lib/FileSaver.min.js", "background.js"]
+},
+  
+  "permissions": [
+    "tabs"
+],
+  
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["lib/jquery-3.2.1.min.js", "lib/html2canvas.js", "loggerPlugin.js"]
+    }
+  ],
+  
+  "web_accessible_resources": ["report/report.html", "lib/d3.min.js", "report.css"],
+  
+  "browser_action": {
+    "default_icon": "icons/logger-32.png",
+    "default_title": "Logger",
+    "default_popup": "popup/loggerPopup.html"
+  },
+"applications": {
+    "gecko": {
+      "id": "user-test-logger@ibm.com"
+    }
+  } 
+}
