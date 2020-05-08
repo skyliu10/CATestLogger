@@ -1,5 +1,6 @@
 # CA Test Logger
 This project is built off the open source extension User Test Logger. It extracts Computer Anxiety related HCI metrics tracked by User Test Logger and produces a Computer Anxiety results page once the HCI data logging has finished. 
+
 Citation: Santana, V. F., and Silva, F. E. F. 2019. User Test Logger: An Open Source Browser Plugin for Logging and Reporting Local User Studies. In Proceedings of XXI International Conference on Human-Computer Interaction (HCII 2019). Springer.
 
 This version of the User Test Logger (called CA Test Logger) includes all the aspects of User Test Logger with the additions of a refresh button, a Computer Anxiety results page, and time stamps on the mouse plot. Below is information about User Test Logger and how to setup this extension. 
